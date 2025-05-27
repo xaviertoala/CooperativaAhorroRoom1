@@ -8,19 +8,27 @@ public class Persona {
     
     
     //Metodos
-    public void Persona (String nombre, int id, String email){
+    public void Persona (String nombre, int Id, String email){
+        System.out.println("...............Persona afiliada............");
         System.out.println("Nombre completo: "+ nombre);
-        System.out.println("Identificacion: "+ id);
+        System.out.println("Identificacion: "+ Id);
         System.out.println("Email: "+ email);
         System.out.println("---------------------");
     }
-    /*public void PersonaD (String nombre){
+    public void PersonaAsociada (String nombre, int Id, String email){
+        System.out.println("............Persona Asociada..........");
         System.out.println("Nombre completo: "+ nombre);
-    }*/
-    public void imprimirPersona (){
-        Persona("Ander", 220032456, "ander.espoch.edu.ec");
+        System.out.println("Identificador: "+ Id);
+        System.out.println("Email: "+email);
         
     }
+    public void imprimirPersona (){
+        Persona("Ander", 220032456, "ander.espoch.edu.ec");
+        }
+    public void imprimirAsociada (){
+        PersonaAsociada ("Josue", 200032457, "josue.espoch.edu.ec");
+    }    
+    
     
     
     
