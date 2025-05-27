@@ -8,12 +8,30 @@ public class CooperativaCredito {
         Persona objHuman = new Persona ();
         System.out.println("_______________________________________");
         objHuman.imprimirPersona();
-        Cuenta obj = new Cuenta (220024, /*saldo*/2000, Tipocuenta.AHORRO, /*depositar*/ 700,/*retirar*/ 2001,/*transferir*/ 100);
+        
+        Cuenta obj = new Cuenta (220024, /*saldo*/2000, Tipocuenta.AHORRO, /*depositar*/ 700,/*retirar*/ 2001,/*transferir*/ 100,150);
         obj.imprimirCuenta(true);
         objHuman.imprimirAsociada();
-        Cuenta obj2 = new Cuenta (220025, 10, Tipocuenta.CORRIENTE, 700, 2001, 100);
+        
+        Cuenta obj2 = new Cuenta (220025, 10, Tipocuenta.CORRIENTE, 700, 2001, 100,150);
         obj2.cuentaDos();
-        objHuman.imprimirPersona();
+        
+        //Eleccion de cuenta para alguna transaccion
+        System.out.println("Con cual de las cuentas desea ingresar?");
+        System.out.println("1.Afiliada");
+        System.out.println("2.Asociada");
+        int tipoOpcion = a.nextInt();
+        switch(tipoOpcion){
+            case 1:
+                objHuman.imprimirPersona();
+                obj.imprimirCuenta(true);                
+                break;
+            case 2:
+                objHuman.imprimirAsociada();
+                obj2.cuentaDos();
+                break;
+        }
+       
         System.out.println("Desea hacer alguna transaccion?");    
         System.out.println("1. Deposito");
         System.out.println("2. Retiro");
@@ -29,10 +47,18 @@ public class CooperativaCredito {
                 obj.imprimirRetiro ();
                 break; 
             case 3: 
-                obj.imprimirTransferencia();
-                objHuman.imprimirAsociada();
-                obj2.montoCuendaDos();
+                 if(tipoOpcion == 1){
+                    obj.imprimirTransferencia();
+                    objHuman.imprimirAsociada();
+                    obj2.montoCuendaDos();
+                 }
+                 else{
+                    obj.imprimirTransferenciaAsociadoAfiliada();
+                    objHuman.imprimirPersona();
+                    obj.montoCuendaUno();
+                 }
                 break; 
+                
         }
         
         
