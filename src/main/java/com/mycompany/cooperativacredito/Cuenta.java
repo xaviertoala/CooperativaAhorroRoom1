@@ -18,19 +18,18 @@ public class Cuenta {
         this.transferencia = transferencia; 
     }
 
-    //Metodos 
+    //Metodos CUENTA AFILIADA
     public void cuentaA (int identificador, double saldo, Tipocuenta tipoCuenta){
         System.out.println("Numero de cuenta: "+ identificador);
         System.out.println("Saldo actual: "+ saldo);
         System.out.println("Tipo de cuenta "+ Tipocuenta.AHORRO);
-        System.out.println("....................................");
         
     }
     public void cuentaC (int identificador, double saldo, Tipocuenta tipoCuenta){
         System.out.println("Numero de cuenta: "+ identificador);
         System.out.println("Saldo actual: "+ saldo);
         System.out.println("Tipo de cuenta "+ Tipocuenta.CORRIENTE);
-        System.out.println("....................................");
+
     }
     public void imprimirCuenta (boolean valor){
         if (valor){
@@ -40,6 +39,7 @@ public class Cuenta {
         }
  
     }
+    //Metodo DEPOSITO DE DINERO
     public double depositarDinero (){
         return saldo + depositarDinero; 
     }
@@ -49,7 +49,7 @@ public class Cuenta {
         System.out.println("Saldo actual: "+ depositarDinero ());
         System.out.println(" ");
     }
-    //Retirar dinero
+    //Metodo RETIRAR DINERO 
     public double retirarDinero (){
         return saldo-retirarDinero; 
     }
@@ -62,14 +62,16 @@ public class Cuenta {
         }
         System.out.println(" ");
     }
-    //CUENTA DOS 
+    //Metodo CUENTA ASOCIADA | Utiliza el mismo constructor |
     public void cuentaDos (){
         System.out.println("-----------------------");
         System.out.println("Numero de cuenta: "+ identificador);
         System.out.println("Saldo: "+ saldo);
         System.out.println("Tipo de cuenta: "+ tipoCuenta);
         System.out.println("_______________________________________");
+        System.out.println(" ");
     }
+    //Metodo TRANSFERENCIA CUENTA AFILIADA A CUENTA ASOCIADA
     public double transferencia (){
         return saldo - transferencia ; 
     }
@@ -77,6 +79,7 @@ public class Cuenta {
         System.out.println("Monto de dinero transferido a persona asociada: "+ transferencia);
         System.out.println("Saldo actual: "+transferencia ());
     }
+    //Metodo CUENTA ASOCIADA CON TRANSFERENCIA DESDE CUENTA AFILIADA
     public double montoCuentaD (){
         return transferencia + saldo; 
     }

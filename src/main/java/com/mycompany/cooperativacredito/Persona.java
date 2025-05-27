@@ -9,14 +9,14 @@ public class Persona {
     
     //Metodos
     public void Persona (String nombre, int Id, String email){
-        System.out.println("...............Persona afiliada............");
+        System.out.println("............Persona afiliada............");
         System.out.println("Nombre completo: "+ nombre);
         System.out.println("Identificacion: "+ Id);
         System.out.println("Email: "+ email);
         System.out.println("---------------------");
     }
     public void PersonaAsociada (String nombre, int Id, String email){
-        System.out.println("............Persona Asociada..........");
+        System.out.println("............Persona Asociada............");
         System.out.println("Nombre completo: "+ nombre);
         System.out.println("Identificador: "+ Id);
         System.out.println("Email: "+email);

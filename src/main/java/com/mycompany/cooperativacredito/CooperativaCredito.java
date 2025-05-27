@@ -4,11 +4,11 @@ public class CooperativaCredito {
 
     public static void main(String[] args) {
         Scanner a = new Scanner (System.in);
-        System.out.println("Cooperativca de Ahorro y Credito FuturoSeguro");
+        System.out.println("COOPERATIVA DE AHORRO Y CREDITO FuturoSeguro");
         Persona objHuman = new Persona ();
         System.out.println("_______________________________________");
         objHuman.imprimirPersona();
-        Cuenta obj = new Cuenta (220024, 2000, Tipocuenta.AHORRO, 700, 2001, 100);
+        Cuenta obj = new Cuenta (220024, /*saldo*/2000, Tipocuenta.AHORRO, /*depositar*/ 700,/*retirar*/ 2001,/*transferir*/ 100);
         obj.imprimirCuenta(true);
         objHuman.imprimirAsociada();
         Cuenta obj2 = new Cuenta (220025, 10, Tipocuenta.CORRIENTE, 700, 2001, 100);
@@ -32,7 +32,9 @@ public class CooperativaCredito {
                 obj.imprimirTransferencia();
                 objHuman.imprimirAsociada();
                 obj2.montoCuendaDos();
+                break; 
         }
+        
         
         
         
