@@ -41,10 +41,18 @@ public class CooperativaCredito {
         //Saldo después del deposito
         switch (opcion){
             case 1: 
-                obj.imprimirDeposito();
+                if(tipoOpcion == 1){
+                    obj.imprimirDeposito();
+                }else {
+                    obj.imprimirDepositoA();
+                }
                 break;
             case 2: 
-                obj.imprimirRetiro ();
+                if(tipoOpcion == 1){
+                   obj.imprimirRetiro (); 
+                }else{
+                   obj.imprimirRetiroA();
+                }                
                 break; 
             case 3: 
                  if(tipoOpcion == 1){

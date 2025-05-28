@@ -41,7 +41,7 @@ public class Cuenta {
         }
  
     }
-    //Metodo DEPOSITO DE DINERO
+    //Metodo DEPOSITO DE DINERO CUENTA C
     public double depositarDinero (){
         return saldo + depositarDinero; 
     }
@@ -51,7 +51,19 @@ public class Cuenta {
         System.out.println("Saldo actual: "+ depositarDinero ());
         System.out.println(" ");
     }
-    //Metodo RETIRAR DINERO 
+    
+    //Metodo Deposito de dinero cuentaA
+    public double depositarDineroA (){
+        return saldoDos + depositarDinero ;
+    }
+    public void imprimirDepositoA (){
+        //Saldo después del deposito
+        System.out.println("Cuanto dinero desea depositar? "+"\n"+depositarDinero);
+        System.out.println("Saldo actual: "+ depositarDineroA ());
+        System.out.println(" ");
+    }
+    
+    //Metodo RETIRAR DINERO CUENTA C
     public double retirarDinero (){
         return saldo-retirarDinero; 
     }
@@ -64,6 +76,21 @@ public class Cuenta {
         }
         System.out.println(" ");
     }
+    
+    //Metodo retirar dinero cuentaA
+    public double retirarDineroA(){
+        return saldoDos - retirarDinero ;
+    }
+    public void imprimirRetiroA(){
+        System.out.println("Cuanto dinero desea retirar? "+"\n"+ retirarDinero);
+        if (retirarDinero > saldoDos){
+            System.out.println("Error: saldo insuficiente");
+        } else {
+            System.out.println("Saldo actual: "+retirarDineroA());
+        }
+        System.out.println(" ");
+    }
+    
     //Metodo CUENTA ASOCIADA | Utiliza el mismo constructor |
     public void cuentaDos (){
         System.out.println("-----------------------");
