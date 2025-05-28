@@ -9,8 +9,18 @@ public class Cuenta {
     public double retirarDinero;
     public double transferencia; 
     public double saldoDos;
+    public String cerrar; 
     //Constructores
-    public Cuenta(int identificador, double saldo, Tipocuenta tipoCuenta, double depositarDinero, double retirarDinero, double transferencia,double saldoDos) {
+    public Cuenta(int identificador, double saldo, Tipocuenta tipoCuenta, double depositarDinero, double retirarDinero, double transferencia) {
+        this.identificador = identificador;
+        this.saldo = saldo;
+        this.tipoCuenta = tipoCuenta;
+        this.depositarDinero = depositarDinero;
+        this.retirarDinero = retirarDinero;
+        this.transferencia = transferencia; 
+
+    }
+        public Cuenta (int identificador , Tipocuenta tipoCuenta, double depositarDinero, double retirarDinero, double transferencia,double saldoDos) {
         this.identificador = identificador;
         this.saldo = saldo;
         this.tipoCuenta = tipoCuenta;
@@ -19,7 +29,10 @@ public class Cuenta {
         this.transferencia = transferencia; 
         this.saldoDos = saldoDos;
     }
-
+        //Constructor CerrarSesion |null|
+        public Cuenta (String cerrar){
+            this.cerrar = cerrar; 
+        }
     //Metodos CUENTA AFILIADA
     public void cuentaA (int identificador, double saldo, Tipocuenta tipoCuenta){
         System.out.println("Numero de cuenta: "+ identificador);
@@ -91,7 +104,7 @@ public class Cuenta {
         System.out.println(" ");
     }
     
-    //Metodo CUENTA ASOCIADA | Utiliza el mismo constructor |
+    //Metodo CUENTA ASOCIADA  
     public void cuentaDos (){
         System.out.println("-----------------------");
         System.out.println("Numero de cuenta: "+ identificador);
@@ -112,7 +125,7 @@ public class Cuenta {
     }
     //Metodo CUENTA ASOCIADA CON TRANSFERENCIA DESDE CUENTA AFILIADA
     public double montoCuentaD (){
-        return transferencia + saldo; 
+        return transferencia + saldoDos; 
     }
      public void montoCuendaDos (){
         System.out.println("-----------------------");
@@ -140,6 +153,14 @@ public class Cuenta {
         System.out.println("Saldo actual: "+ montoCuentaA ());
         System.out.println("Tipo de cuenta "+ Tipocuenta.AHORRO);
         System.out.println("_______________________________________");
+    }
+    public void cerrarsesion (){
+        System.out.println("Desea cerrar la cuenta? (1-2)");
+        System.out.println("1. Si");
+        System.out.println("2. No");
+    }
+    public void cerrar (){
+        System.out.println("Cuenta "+ cerrar+" cerrada exitosamente");
     }
     
    

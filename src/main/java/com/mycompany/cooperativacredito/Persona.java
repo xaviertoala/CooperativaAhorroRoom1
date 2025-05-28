@@ -5,7 +5,7 @@ public class Persona {
     public String nombre; 
     public int Id; 
     public String email; 
-    
+    public Cuenta cuenta; 
     
     //Metodos
     public void Persona (String nombre, int Id, String email){
@@ -28,7 +28,13 @@ public class Persona {
     public void imprimirAsociada (){
         PersonaAsociada ("Josue", 200032457, "josue.espoch.edu.ec");
     }    
-    
+    public void mostrarCuenta (){
+        if (cuenta == null){
+            System.out.println("Error: la cuenta no ha sido creada.");
+        }else {
+            cuenta.imprimirCuenta(true);
+        }
+    }
     
     
     

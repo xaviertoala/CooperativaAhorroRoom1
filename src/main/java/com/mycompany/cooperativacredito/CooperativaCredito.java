@@ -6,15 +6,17 @@ public class CooperativaCredito {
         Scanner a = new Scanner (System.in);
         System.out.println("COOPERATIVA DE AHORRO Y CREDITO FuturoSeguro");
         Persona objHuman = new Persona ();
+        objHuman.mostrarCuenta();
         System.out.println("_______________________________________");
         objHuman.imprimirPersona();
         
-        Cuenta obj = new Cuenta (220024, /*saldo*/2000, Tipocuenta.AHORRO, /*depositar*/ 700,/*retirar*/ 2001,/*transferir*/ 100,150);
+        Cuenta obj = new Cuenta (220024, /*saldo*/2000, Tipocuenta.AHORRO, /*depositar*/ 700,/*retirar*/ 2001,/*transferir*/ 100);
         obj.imprimirCuenta(true);
         objHuman.imprimirAsociada();
         
-        Cuenta obj2 = new Cuenta (220025, 10, Tipocuenta.CORRIENTE, 700, 2001, 100,150);
+        Cuenta obj2 = new Cuenta (220025, Tipocuenta.CORRIENTE, 700, 2001, 100,150);
         obj2.cuentaDos();
+        
         
         //Eleccion de cuenta para alguna transaccion
         System.out.println("Con cual de las cuentas desea ingresar?");
@@ -66,7 +68,23 @@ public class CooperativaCredito {
                     obj.montoCuendaUno();
                  }
                 break; 
-                
+        }
+        Cuenta cerrar = new Cuenta ("");
+        obj.cerrarsesion();
+        int cerrarS = a.nextInt();
+        if (cerrarS == 1){
+            if (tipoOpcion == 1){
+            
+            objHuman.imprimirAsociada();
+            obj.cerrar();
+            
+        } else {
+            objHuman.imprimirPersona();
+            obj.cerrar();
+            
+        }
+        } else {
+            System.out.println("Gracias por su visita");
         }
         
         
